@@ -1,0 +1,122 @@
+%%% for presentation mode
+\documentclass[14pt]{beamer}
+
+%%% for article mode
+%\documentclass[14pt]{article}
+%\usepackage{beamerarticle}
+%\usepackage[unicode]{hyperref}
+
+\usepackage{CJKutf8}
+\usepackage{graphicx}
+\usepackage{xcolor}
+%\DeclareGraphicsExtensions{.bb,.pdf,.jpg,.png,.tif}
+%\pdfimageresolution 100
+%\usepackage{color}
+
+%% handout
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
+
+%\hypersetup{bookmarks=true,pdfauthor=letoh,colorlinks=true,linkcolor=black,pdfpagemode=FullScreen}
+\hypersetup{pdfauthor=letoh,colorlinks=true,linkcolor=magenta,pdfpagemode=FullScreen}
+%\hypersetup{pdfauthor=letoh,colorlinks=true,linkcolor=black,pdfpagemode=FullScreen}
+
+\usepackage{listings}
+\lstset{tabsize=4,language=Python,
+	%frameround=ffft,
+	%frame=shadowbox,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\bfseries,
+	stringstyle=\color{red},
+	commentstyle=\color{OliveGreen}\ttfamily\itshape}
+
+\mode<presentation>
+{
+	\usetheme{PyHug}
+	%\usetheme{Warsaw}
+%  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+  \setbeamercovered{dynamic}
+%  \setbeamercovered{invisible}
+}
+
+
+
+\newcommand{\alertframe}[1]{
+	\begin{frame}
+		\begin{center}
+			\alert{\textbf{\Huge #1}}
+		\end{center}
+	\end{frame}
+}
+
+\newcommand{\popupframe}[1]{
+	\begin{frame}
+		\begin{center}
+			\textbf{\Huge #1}
+		\end{center}
+	\end{frame}
+}
+
+%\usepackage{times}
+%\usepackage[latin1]{inputenc}
+
+\title{Depana: A Toy Static Dependency Analyzer}
+\author{letoh}
+\institute{PyHug::January}
+%\date{\today}
+\date{January 9, 2012}
+
+\begin{document}
+\begin{CJK}{UTF8}{nsung}
+% View this in acroread with "loop after last page option" in full screen mode.
+
+
+%\AtBeginSubsection[]
+%{
+%	\begin{frame}<presentation>
+%		\frametitle{Outline}
+%		\tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+
+
+%
+% Title
+%
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+%
+% Outline
+%
+\section*{Outline} 
+%\frame{\tableofcontents}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+\input{slidebody}
+
+
+\alertframe{\textit{Thank you!}}
+\alertframe{\textit{Q \& A}}
+
+%\begin{frame}<presentation>
+%  \frametitle{Thanks}
+%  \begin{center}
+%  \textit{\huge Thanks for your attention!}~~~\textit{\large Q \& A}
+%  \end{center}
+%\end{frame}
+
+
+\end{CJK}
+\end{document}
+
+

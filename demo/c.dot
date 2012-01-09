@@ -1,0 +1,15 @@
+digraph g
+{
+	/*bgcolor="transparent";*/
+	node [color = lightgray, style = filled];
+
+	subgraph cluster__ {
+		label = ".";
+
+		__a_o [label="./a.o (1/1)"];
+		__b_o [label="./b.o (1/1)"];
+	}
+
+	__a_o -> __b_o [label="1"];
+	__b_o -> __a_o [label="2"];
+}

@@ -1,0 +1,44 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/inner/beamerinnerthemePyHug.sty,v 1.5 2007/01/28 20:48:30 tantau Exp $
+
+
+\DeclareOptionBeamer{shadow}[true]{\def\beamer@themerounded@shadow{#1}}
+\ExecuteOptionsBeamer{shadow=false}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\setbeamertemplate{blocks}[rounded][shadow=\beamer@themerounded@shadow]
+%\setbeamertemplate{items}[ball]
+\setbeamertemplate{itemize}[square]
+%\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=\beamer@themerounded@shadow]
+\setbeamertemplate{part page}[default][colsep=-4bp,rounded=true,shadow=\beamer@themerounded@shadow]
+
+%\setbeamersize{text margin top=0.1cm}
+
+%% supress navigation bar
+%\setbeamertemplate{navigation symbols}{}
+
+
+%%% http://lenni.info/blog/2009/08/converting-transparent-pngs-for-use-with-latex/
+%%% https://mail.cs.drexel.edu/pipermail/unix-dev/2008-April/001322.html
+%%% convert -background white -layers merge input.png output.png
+\pgfdeclareimage[interpolate=true,width=40pt,height=40pt]{pyhuglogo}{pyhuglogo_t}
+%\logo{\pgfimage[width=40pt,height=9pt]{pyhuglogo_t}}
+%\logo{\pgfuseimage{pyhuglogo}}
+
+  
+\mode<all>
+
+%%% Local Variables: 
+%%% TeX-master: "~/texmf/tex/latex/beamer/test/test.tex"
+%%% End: 

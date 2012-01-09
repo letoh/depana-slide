@@ -1,0 +1,15 @@
+analyzing target: a.c
+ tracing target: a.c
+ found: .c , 1 outgoing links
+ +--> b.c
+   tracing target: b.c
+   found: .c , 1 outgoing links
+   +--> a.c
+
+generating dep list:
+
+warn: got except on analyzing a.o -> b.o
+a.o: a.c b.o
+
+b.o: b.c a.o
+
